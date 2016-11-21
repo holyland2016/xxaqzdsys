@@ -1,0 +1,149 @@
+{layout name="layout" /}
+
+    <div class="col-sm-10 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">用户列表（{$count}）</h1>
+      <p><button class="btn btn btn-success" type="button" data-toggle="modal" data-target="#add">新增</button></p>
+      {include file="user/add" /}
+
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>用户账号</th>
+              <th>用户昵称</th>
+              <th>用户邮箱</th>
+              <th>登陆次数</th>
+              <th>最后登陆时间</th>
+              <th>最后登陆IP</th>
+              <th>状态</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            {volist name="list" id="user" }
+            <tr>
+
+              <td>{$user.username}</td>
+              <td>{$user.nickname}</td>
+              <td>{$user.email}</td>
+              <td>{$user.login_count}</td>
+              <td>{$user.last_login_time}</td>
+              <td>{$user.last_login_ip}</td>
+              <td><span class="label label-success">{$user.status}</span></td>
+              <td>
+                <a class="btn btn-primary" type="button" data-toggle="modal" data-target="#edit-{$user->id}">
+                    编辑
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="edit-{$user->id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title" id="myModalLabel">编辑用户</h2>
+                      </div>
+                      <div class="modal-body">
+                        <form method="post" action="{:url('admin/user/add')}" >
+                          <div class="form-group">
+                            <label for="exampleInputName2">用户昵称</label>
+                            <input type="text" name="nickname" class="form-control" id="exampleInputName2" value="{$user.nickname}">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputName2">用户账号</label>
+                            <input type="text"name="username" class="form-control" id="exampleInputName2" value="{$user.username}">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">用户邮箱</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="{$user.email}">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">用户密码</label>
+                            <input type="text" name="password" class="form-control" id="exampleInputPassword1" value="{$user.password}">
+                          </div>
+                          </div>
+                          <div style="padding:10px 10px 10px 10px">
+                            <input type="hidden" name="__token__" value="{$Request.token}" />
+                            <button type="sumbit" class="btn btn-primary btn-lg">修改</button>
+                            <button type="button" class="btn btn-default btn-lg"  data-dismiss="modal">
+                              取消
+                            </button>
+                          </div>
+
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="btn btn-warning"  data-toggle="modal" data-target="#forbidden-{$user->id}">
+                    禁用
+                </a>
+                <!-- href="{:url('admin/forbidden/'.$user->id)}" -->
+                <!-- Modal -->
+              <div class="modal fade" id="forbidden-{$user->id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h2 class="modal-title" id="myModalLabel">操作</h2>
+                    </div>
+                    <div class="modal-body">
+                      <h4>是否禁用<strong>{$user.nickname}</strong></h4>
+                    </div>
+                    <div class="modal-footer">
+                      <a type="button" class="btn btn-primary" href="{:url('admin/forbidden/'.$user->id)}">确定</a>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <a class="btn btn-default" data-toggle="modal" data-target="#open-{$user->id}">
+                    启用
+                </a>
+                <!-- Modal -->
+              <div class="modal fade" id="open-{$user->id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h2 class="modal-title" id="myModalLabel">操作</h2>
+                    </div>
+                    <div class="modal-body">
+                      <h4>是否启用<strong>{$user.nickname}</strong></h4>
+                    </div>
+                    <div class="modal-footer">
+                      <a type="button" class="btn btn-primary" href="{:url('admin/open/'.$user->id)}">确定</a>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <a class="btn btn-danger" data-toggle="modal" data-target="#delete-{$user->id}">
+                    删除
+                </a>
+                <!-- Modal -->
+              <div class="modal fade" id="delete-{$user->id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h2 class="modal-title" id="myModalLabel">操作</h2>
+                    </div>
+                    <div class="modal-body">
+                      <h4>是否删除<strong>{$user.nickname}</strong></h4>
+                    </div>
+                    <div class="modal-footer">
+                      <a type="button" class="btn btn-primary" href="{:url('admin/delete/'.$user->id)}">确定</a>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </td>
+            </tr>
+            {/volist}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

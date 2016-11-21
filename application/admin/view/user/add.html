@@ -1,0 +1,52 @@
+
+<!-- Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="myModalLabel">新增用户</h2>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{:url('admin/user/add')}" >
+          <div class="form-group">
+            <label for="exampleInputName2">用户昵称</label>
+            <input type="text" name="nickname" class="form-control" id="exampleInputName2" placeholder="请输入昵称">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName2">*用户账号</label>
+            <input type="text"name="username" class="form-control" id="exampleInputName2" placeholder="请输入账号">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">*用户邮箱</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">*用户密码</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" style="padding-right:20px">*状态</label>
+            <label>
+              <input type="radio" name="status" id="optionsRadios1" value="1" checked>
+              启用
+            </label>
+            <label>
+              <input type="radio" name="status" id="optionsRadios1" value="2" >
+              禁用
+            </label>
+          </div>
+          <div style="padding-top:10px">
+            <input type="hidden" name="__token__" value="{$Request.token}" />
+            <button type="sumbit" class="btn btn-primary btn-lg">添加</button>
+            <button type="button" class="btn btn-default btn-lg"  data-dismiss="modal">
+              取消
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
