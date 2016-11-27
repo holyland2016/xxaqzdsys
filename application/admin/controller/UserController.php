@@ -73,7 +73,7 @@ class UserController extends controller{
     if($result){
       $this->redirect('index/index');
     }else{
-      return $user->getError();
+      return $result->getError();
     }
   }
 

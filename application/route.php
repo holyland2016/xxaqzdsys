@@ -26,4 +26,8 @@ return [
     'admin/delete/:id'=> 'admin/user/delete',
     'admin/:id'       => 'admin/user/read',
 
+    'admin/posts/create'     => 'admin/posts/create',
+    'admin/posts/list'       => 'admin/posts/list',
+    'admin/posts/delete/:id' => 'admin/posts/delete',
+
 ];

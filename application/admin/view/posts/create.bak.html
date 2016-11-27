@@ -1,0 +1,87 @@
+{layout name="layout" /}
+
+<div class="col-sm-10 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">&#8194;撰写新文章</h1>
+  {foreach name="data.edit_fields" item="field" key="key" }
+  {switch name=$field['type'] }
+    {case value="textarea"}
+    <div class="col-sm-9 col-md-9">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="在此输入标题">
+      </div>
+    <div class="form-group">
+      {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+        <textarea
+          class="form-control {if isset($field['class']) AND $field['class']}{$field['class']}{/if}"
+          {if isset($field['id']) AND $field['id']}id="{$field['id']}"{/if}
+          name="{$key}"
+          {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}>{if isset($item[$key]) AND $item[$key]}{$item[$key]}{/if}</textarea>
+          {if(isset($data.ckeditor) and $data.ckeditor)}{:display_ckeditor($data.ckeditor);}{/if}
+          {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+      </div>
+  </div>
+  <div class="col-sm-3 col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">发布</div>
+      <div class="panel-body">
+
+        <div class="form-group">
+          <strong>作者</strong>
+          <label>
+            <select class="form-control">
+              <option>admin</option>
+              <option>holyland</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </label>
+        </div>
+        <h5><strong>状态</strong></h5>
+        <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> 发布
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 草稿
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 删除
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 待审核
+          </label>
+        </div>
+        <h5><strong>发布时间</strong></h5>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>提交
+        </button>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">特色图片</div>
+      <div class="panel-body">
+
+        <div class="form-group">
+          <label for="exampleInputFile">点击图片上传</label>
+          <input type="file" id="exampleInputFile">
+        </div>
+      </div>
+    </div>
+  </div>
+    {/case}
+  {/switch}
+{/foreach}
+</div>
+</div>
+</div>

@@ -6,5 +6,28 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="__PUBLIC__/js/jquery.min.js"></script>
 <script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/moment.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap-datetimepicker.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="__PUBLIC__/js/zh-cn.js"></script>
+<script type="text/javascript">
+$(function () {
+  $('#datetimepicker1').datetimepicker({
+    locale: 'zh-cn',
+    format: 'YYYY-MM-DD hh:mm:ss'
+  });
+  $('#datetimepicker2').datetimepicker({
+    locale: 'zh-cn',
+    viewMode: 'years',
+    format: 'YYYY-MM-DD'
+  });
+  $('#datetimepicker3').datetimepicker({
+    locale: 'zh-cn',
+    viewMode: 'years',
+    format: 'YYYY-MM-DD'
+  });
+});
+</script>
+
 </body>
 </html>
