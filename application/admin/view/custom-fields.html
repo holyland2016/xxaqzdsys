@@ -12,7 +12,9 @@
                         {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}
                         class="form-control {if isset($field['class']) AND $field['class']}{$field['class']}{/if}"
                         {if isset($field['extra']['data']['format']) }data-format="{$field['extra']['data']['format']}"{/if}
-                        name="{$key}" placeholder="{if isset($field['placeholder']) AND $field['placeholder']}{$field['placeholder']}{/if}">
+                        name="{$key}"
+                        value="{if isset($item[$key])}{$item[$key]}{/if}"
+                        placeholder="{if isset($field['placeholder']) AND $field['placeholder']}{$field['placeholder']}{/if}">
 
                     {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
           </div>

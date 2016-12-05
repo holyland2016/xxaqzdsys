@@ -2,7 +2,10 @@
 namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\User as UserModel;
-class UserController extends controller{
+use app\admin\controller\AdminAuthController;
+use think\Validate;
+
+class UserController extends AdminAuthController{
 
   // 模块基本信息
   private $data = array(
@@ -13,7 +16,8 @@ class UserController extends controller{
     // 获取用户的数据
   public function index()
   {
-    $list =UserModel::all();
+    $list =  UserModel::where('status','>=','0')->order('id', 'ASC')->paginate();
+
     $this->assign('data',$this->data);
     $this->assign('list',$list);
     $this->assign('count',count($list));

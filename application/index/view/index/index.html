@@ -1,9 +1,245 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>信息安全国家重点实验室</title>
+<link href="/static/index/style1114.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/index/jquery-1.42.min.js"></script>
+<script type="text/javascript" src="/static/index/jquery.KinSlideshow-1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#KinSlideshow").KinSlideshow();
+	});
+</script>
 </head>
-<body>
-{$result.id}--{$result.data}
 
+<body>
+<div class="topwrap">
+	<div class="banner"></div>
+    <div class="menuwrap">
+<a href="http://www.sklois.cn/" target="_top">首页</a>|
+
+    	<a href="http://www.sklois.cn/jggk/" target="_top">实验室概况</a>|
+
+    	<a href="http://www.sklois.cn/xwzx/" target="_top">新闻中心</a>|
+
+    	<a href="http://www.sklois.cn/kycg1/" target="_top">科研成果</a>|
+
+    	<a href="http://www.sklois.cn/rcdw/" target="_top">人才队伍</a>|
+
+    	<a href="http://www.sklois.cn/kfkt1/" target="_top">开放交流</a>|
+
+    	<a href="http://www.sklois.cn/yjsjy/" target="_top">研究生教育</a>|
+
+    	<a href="http://www.sklois.cn/cxwh/" target="_top">创新文化</a>|
+
+    	<a href="http://www.sklois.cn/lxwm1/" target="_top">联系我们</a>|
+
+    </div>
+</div>
+<div class="centerwrap">
+	<div class="topnews_wrap">
+    	<div class="topnews_img"><!--幻灯片新闻开始-->
+           <div id="KinSlideshow" style="visibility:hidden;">
+
+        <a href="./xwzx/tpxw/201611/t20161111_354282.html" target="_blank"><img src="./xwzx/tpxw/201611/W020161111591952361766.jpg" alt="2016（首届）中国隐私保护学术会议在京圆满召开" title="2016（首届）中国隐私保护学术会议在京圆满召开" width="435" height="257" border="0" /></a>
+
+        <a href="./xwzx/tpxw/201611/t20161110_354009.html" target="_blank"><img src="./xwzx/tpxw/201611/W020161110369899425691.jpg" alt="第十二届信息安全与密码学国际会议在京召开" title="第十二届信息安全与密码学国际会议在京召开" width="435" height="257" border="0" /></a>
+
+        <a href="./xwzx/tpxw/201611/t20161108_353636.html" target="_blank"><img src="./xwzx/tpxw/201611/W020161108523905275667.jpg" alt="第十四届理论密码学会议在京召开" title="第十四届理论密码学会议在京召开" width="435" height="257" border="0" /></a>
+
+        <a href="./xwzx/tpxw/201609/t20160922_348840.html" target="_blank"><img src="./xwzx/tpxw/201609/W020160922414509753538.jpg" alt="信息安全国家重点实验室成功举办第十五届国..." title="信息安全国家重点实验室成功举办第十五届国际数字取证和数字水印会议" width="435" height="257" border="0" /></a>
+
+        <a href="./xwzx/tpxw/201609/t20160902_346966.html" target="_blank"><img src="./xwzx/tpxw/201609/W020160902367869930079.jpg" alt="信息安全国家重点实验室举办第三届中韩编码..." title="信息安全国家重点实验室举办第三届中韩编码理论及相关领域国际会议" width="435" height="257" border="0" /></a>
+
+            </div>
+          <!--幻灯片新闻结束--></div>
+
+        <div class="topnews">
+        	<div class="news_title margin10"><a href='./xwzx/tpxw/'>更多&gt;&gt;</a>焦点新闻 </div>
+            <ul class="news_list">
+            {if($list)}
+              {foreach $list as $item)}
+            	<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
+              {/foreach}
+            {/if}
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+	<div class="center1000">
+        <div class="leftwrap">
+       	  <div class="lefttitle">实验室概况</div>
+          <table width="100%" border="0" cellspacing="1" cellpadding="1" class="jg_list margin10">
+              <tr>
+                <td><a href='./jggk/sysjj/'>实验室简介</a></td>
+                <td><a href='./jggk/zzjg/'>组织架构</a></td>
+              </tr>
+              <tr>
+                <td><a href='./jggk/xrld/'>现任领导</a></td>
+                <td><a href='./jggk/xswyh/'>学术委员会</a></td>
+              </tr>
+              <tr>
+                <td><a href='./jggk/yjfx/'>研究方向</a></td>
+                <td><a href='./jggk/jgfm/'>实验室风貌</a></td>
+              </tr>
+            </table>
+       	  <div class="lefttitle"><a href='./kycg1/dbcg/'>更多&gt;&gt;</a>代表性成果</div>
+          <div class="sidewrap margin10">
+                <ul class="sidelist">
+
+                	<li><a href="./kycg1/dbcg/201501/t20150107_275266.html">五年成果摘要</a><span></span></li>
+
+                	<li><a href="./kycg1/dbcg/201412/t20141208_271429.html">零知识证明研究和应用</a><span></span></li>
+
+                	<li><a href="./kycg1/dbcg/201412/t20141208_271428.html">密码算法分析方法与检测技术</a><span></span></li>
+
+                	<li><a href="./kycg1/dbcg/201412/t20141208_271427.html">可信计算安全支撑平台关...</a><span></span></li>
+
+                	<li><a href="./kycg1/dbcg/201412/t20141208_271426.html">网络攻击隐蔽特征分析</a><span></span></li>
+
+                	<li><a href="./kycg1/dbcg/201412/t20141208_271419.html">序列密码设计与国际标准化</a><span></span></li>
+
+                </ul>
+            </div>
+          <div class="lefttitle"><a href='./xglj/'>更多&gt;&gt;</a>相关链接</div>
+            <div class="sidewrap margin10">
+                <ul class="sidelist">
+
+                	<li><a href="http://www.cas.cn/">中国科学院</a></li>
+
+                	<li><a href="http://www.gucas.ac.cn/">中国科学院大学</a></li>
+
+                	<li><a href="http://www.iie.ac.cn/">中科院信息工程研究所</a></li>
+
+                	<li><a href="https://mail.cstnet.cn/">信工所邮箱系统</a></li>
+
+                	<li><a href="http://www.las.ac.cn/">中国科学院国家科学图书馆</a></li>
+
+                </ul>
+            </div>
+      </div>
+        <div class="cenwrap">
+        	<div class="news_title margin10"><a href='./xwzx/zhxw/'>更多&gt;&gt;</a>综合新闻 </div>
+          <ul class="news_list margin20">
+
+            	<li><span>[2016-09-18]</span><a href="./xwzx/zhxw/201609/t20160918_348479.html">法国巴黎八大Sihem Mesnager教授访问信息安全国家重点实验室</a></li>
+
+            	<li><span>[2016-09-05]</span><a href="./xwzx/zhxw/201609/t20160905_347181.html">信息安全国家重点实验室李凤华、操晓春研究员“百人计划”终...</a></li>
+
+            	<li><span>[2016-09-01]</span><a href="./xwzx/zhxw/201609/t20160901_346835.html">美国克莱姆森大学大学高绪红教授访问实验室</a></li>
+
+            	<li><span>[2016-08-29]</span><a href="./xwzx/zhxw/201609/t20160909_347687.html">实验室举办2016年网络空间安全论坛</a></li>
+
+            	<li><span>[2016-08-16]</span><a href="./xwzx/zhxw/201608/t20160816_344976.html">上海交通大学熊红凯教授来实验室讲学</a></li>
+
+            	<li><span>[2016-08-16]</span><a href="./xwzx/zhxw/201609/t20160905_347245.html">第一研究室开启京郊“红色之旅”</a></li>
+
+            	<li><span>[2016-07-28]</span><a href="./xwzx/zhxw/201609/t20160906_347306.html">德克萨斯大学圣安东尼奥分校Shouhuai Xu教授访问实验室</a></li>
+
+            	<li><span>[2016-07-26]</span><a href="./xwzx/zhxw/201609/t20160909_347679.html">美国威斯康星大学密尔沃基分校许光午教授访问实验室</a></li>
+
+            	<li><span>[2016-07-11]</span><a href="./xwzx/zhxw/201607/t20160718_343081.html">美国堪萨斯大学罗勃教授访问实验室</a></li>
+
+            	<li><span>[2016-07-06]</span><a href="./xwzx/zhxw/201607/t20160718_343078.html">特拉华大学Qing Xiang教授访问实验室</a></li>
+
+            </ul>
+            <div class="news_title margin10"><a href='./xwzx/kydt/'>更多&gt;&gt;</a>科研动态 </div>
+          <ul class="news_list">
+
+            	<li><span>[2016-08-16]</span><a href="./xwzx/kydt/201609/t20160909_347691.html">实验室博士生赵原、刘泽艺参加SAC 2016国际会议</a></li>
+
+            	<li><span>[2016-08-17]</span><a href="./xwzx/kydt/201609/t20160909_347682.html">实验室博士生常冰赴新加坡管理大学交流访问</a></li>
+
+            	<li><span>[2016-06-20]</span><a href="./xwzx/kydt/201609/t20160909_347677.html">实验室博士生完成新加坡南洋理工大学交流项目</a></li>
+
+            	<li><span>[2016-09-12]</span><a href="./xwzx/kydt/201609/t20160912_348016.html">邓燚研究员赴意大利参加SCN 2016国际会议</a></li>
+
+            	<li><span>[2016-07-21]</span><a href="./xwzx/kydt/201607/t20160721_343259.html">信息安全国家重点实验室王安宇助理研究员参加ISIT 2016国际会议</a></li>
+
+            	<li><span>[2016-07-13]</span><a href="./xwzx/kydt/201609/t20160909_347684.html">实验室师生参加ACISP 2016国际会议</a></li>
+
+            	<li><span>[2016-07-19]</span><a href="./xwzx/kydt/201607/t20160719_343134.html">操晓春研究员赴美国参加IEEE(CVPR)2016国际会议</a></li>
+
+            	<li><span>[2016-07-05]</span><a href="./xwzx/kydt/201607/t20160718_343077.html">实验室人员参加2016年全国电子认证技术交流大会</a></li>
+
+            	<li><span>[2016-07-19]</span><a href="./xwzx/kydt/201607/t20160719_343130.html">信息安全国家重点实验室人员参加ACM IH&MMSec 2016国际会议</a></li>
+
+            	<li><span>[2016-06-08]</span><a href="./xwzx/kydt/201609/t20160909_347693.html">实验室博士生赵原赴比利时根特参加IFIP SEC 2016国际会议</a></li>
+
+            </ul>
+			            <div class="news_title margin10"><a href='./xwzx/xshd/'>更多&gt;&gt;</a>学术活动 </div>
+          <ul class="news_list">
+
+            	<li><span>[2016-10-25]</span><a href="./xwzx/xshd/201610/t20161025_352282.html">2016（首届）中国隐私保护学术会议会议通知</a></li>
+
+            	<li><span>[2016-10-24]</span><a href="./xwzx/xshd/201610/t20161024_352132.html">2016（首届）中国隐私保护学术会议特邀报告之一</a></li>
+
+            	<li><span>[2016-10-21]</span><a href="./xwzx/xshd/201610/t20161021_352069.html">2016（首届）中国隐私保护学术会议会议简介</a></li>
+
+            	<li><span>[2016-10-17]</span><a href="./xwzx/xshd/201610/t20161017_351536.html">学术报告：A Discriminative CNN Representation for Untrimm...</a></li>
+
+            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348186.html">学术报告：Codes from bent functions over finite fields</a></li>
+
+            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348144.html">学术报告：Overview of Research in TuSimple</a></li>
+
+            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348140.html">学术报告：Bent functions: algebraic constructions from th...</a></li>
+
+            	<li><span>[2016-09-05]</span><a href="./xwzx/xshd/201609/t20160905_347260.html">Call for Papers——IWDCF2016</a></li>
+
+            	<li><span>[2016-08-08]</span><a href="./xwzx/xshd/201608/t20160808_344592.html">学术报告：Structured Sparse Learning for SignalProcessing...</a></li>
+
+            	<li><span>[2016-07-21]</span><a href="./xwzx/xshd/201607/t20160721_343258.html">学术报告：New Progress in Cybersecurity Dynamics</a></li>
+
+            </ul>
+      </div>
+        <div class="rightwrap">
+       	  <div class="lefttitle"><a href='./xwzx/tzgg/'>更多&gt;&gt;</a>通知公告</div>
+            <div class="sidewrap margin10">
+                <ul class="sidelist">
+
+                	<li><a href="http://www.sklois.cn/tyfund/">天元基金促进学科交叉融合平台建设项目“编码和信息安全中的数学问题”</a><span>[2016-06-06]</span></li>
+
+                	<li><a href="http://sklois.iie.cas.cn/CryptoMath/">全国高校密码数学挑战赛</a><span>[2016-06-06]</span></li>
+
+                	<li><a href="./xwzx/tzgg/201611/t20161117_354684.html">2016-2017年度信息安全国家重点实验室研究生奖学金公示</a><span>[2016-11-17]</span></li>
+
+                	<li><a href="./xwzx/tzgg/201610/t20161025_352281.html">2016（首届）中国隐私保护学术会议会议通知</a><span>[2016-10-25]</span></li>
+
+                </ul>
+            </div>
+          <div class="lefttitle"><a href='./cxwh/systx/'>更多&gt;&gt;</a>实验室通讯</div>
+            <div class="sidewrap margin10">
+                <ul class="sidelist">
+
+                	<li><a href="./cxwh/systx/201611/t20161110_354063.html">信息安全国家重点实验室通讯2016年第3期...</a><span>[2016-11-10]</span></li>
+
+                	<li><a href="./cxwh/systx/201608/t20160804_344238.html">信息安全国家重点实验室通讯2016年第2期...</a><span>[2016-08-04]</span></li>
+
+                	<li><a href="./cxwh/systx/201605/t20160516_335285.html">信息安全国家重点实验室通讯2016年第1期...</a><span>[2016-05-16]</span></li>
+
+                	<li><a href="./cxwh/systx/201602/t20160224_326451.html">信息安全国家重点实验室通讯2015年第2期...</a><span>[2016-02-24]</span></li>
+
+                	<li><a href="./cxwh/systx/201602/t20160224_326448.html">信息安全国家重点实验室通讯2015年第1期...</a><span>[2016-02-24]</span></li>
+
+                </ul>
+            </div>
+      </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="bottomwrap">
+	<table width="1000" border="0" cellspacing="1" cellpadding="1" style="margin:0 auto;">
+      <tr>
+        <td width="300" align="center"><a href="http://www.cas.cn" target="_blank"><img src="http://www.sklois.cn/images/caslogo.jpg" width="243" height="74" /></a></td>
+        <td width="30" align="center"><img src="http://www.sklois.cn/images/bottomline.gif" /></td>
+        <td class="copyright"><span style="font-family:Arial">&copy;</span>中国科学院信息工程研究所信息安全国家重点实验室 备案序号：京ICP备12047326号 <br />
+          电话：010-82546611 传真：010-82546564<br />
+        地址：北京市海淀区闵庄路甲89号 100093 </td>
+      </tr>
+    </table>
+
+</div>
 </body>
 </html>

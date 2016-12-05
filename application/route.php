@@ -14,6 +14,8 @@ return [
         'id' => '\d+',
     ],
 
+    'admin/login/'    => 'admin/index/login',
+    'admin/login_action/'=> 'admin/index/login_action',
     // 路由器规则定义
     'admin/index'     => 'admin/user/index',
     'admin/create'    => 'admin/user/create',
@@ -28,6 +30,10 @@ return [
 
     'admin/posts/create'     => 'admin/posts/create',
     'admin/posts/list'       => 'admin/posts/list',
+    'admin/posts/read/:id'       => 'admin/posts/read/',
+    'admin/posts/update/:id'       => 'admin/posts/update/',
     'admin/posts/delete/:id' => 'admin/posts/delete',
+
+    'read/:id'                   => 'index/read/',
 
 ];

@@ -1,0 +1,19 @@
+{include file="head" /}
+    <div class="container">
+
+      <form class="form-signin" action="{:url('/admin/login_action')}" class="form-validation mt-20" novalidate method="POST">
+        <h2 class="form-signin-heading">登陆</h2>
+        <label for="inputEmail" class="sr-only">用户名</label>
+        <input type="text" class="form-control"name="admin_username" placeholder="请输入用户名"  required autofocus>
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" name="admin_password"placeholder="请输入密码" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> 记住我
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+      </form>
+
+    </div> <!-- /container -->
+{include file="footer" /}

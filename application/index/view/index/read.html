@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>第十四届理论密码学会议在京召开----信工所信息安全国家重点实验室</title>
+<link href="/static/index/style1114.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/index/jquery-1.42.min.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+/*大中小代码开始*/
+function dealTag(size,zoomObj,tagName){
+		var tagObj = zoomObj.getElementsByTagName(tagName);
+		if (tagObj.length == 0){
+			zoomObj.style.fontSize = size + 'px';
+		}
+		else{
+		  for( var i=0; i<tagObj.length; i++ ){
+				tagObj[i].style.fontSize = size+'px';
+		  }
+		}
+	}
+function doZoom(size){
+		var zoomObj = document.getElementById('zoom');
+		dealTag(size,zoomObj,"p");
+		dealTag(size,zoomObj,"div");
+		dealTag(size,zoomObj,"font");
+		dealTag(size,zoomObj,"span");
+		dealTag(size,zoomObj,"td");
+		dealTag(size,zoomObj,"strong");
+	}
+/*大中小代码结束*/
+/*细览分页开始*/
+function num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt){
+		var nCurrIndex = _nCurrIndex || 0;
+		if(nCurrIndex == 0)
+			document.write("<span class='yldfy12y'>1</span>&nbsp;");
+		else
+			document.write("<a class='yldfy12y' href=\""+_sPageName+"."+_sPageExt+"\">1</a>&nbsp;");
+
+		for(var i=1; i<_nPageCount; i++){
+		if(nCurrIndex == i)
+			document.write("<span class='yldfy12y'>"+(i+1)+"</span>&nbsp;");
+		else
+			document.write("<a class='yldfy12y' href=\""+_sPageName+"_" + i + "."+_sPageExt+"\">"+(i+1)+"</a>&nbsp;");
+			}
+		return "";
+		}
+function createPageHTML(_nPageCount, _nCurrIndex, _sPageName, _sPageExt){
+	if(_nPageCount == null || _nPageCount<=1){
+		return;
+	}
+	var nCurrIndex = _nCurrIndex || 0;
+	if (_nPageCount==2){
+		if(nCurrIndex == 0){
+		document.write("<span class='yldfy12y'>1</span>&nbsp;<a class='yldfy12y' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">2</a>&nbsp;<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+		}
+		else if (nCurrIndex == 1){
+		document.write("<a class='yldfy12' href=\""+_sPageName+ "."+_sPageExt+"\">【上一页】</a>&nbsp;<a class='yldfy12y' href=\""+_sPageName+ "."+_sPageExt+"\">1</a>&nbsp;<span class='yldfy12y'>2</span>&nbsp;");
+		}
+	}
+	else{
+	if(nCurrIndex == 0){
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	else if (nCurrIndex == 1){
+		document.write("<a class='yldfy12' href=\""+_sPageName+"."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	else if(nCurrIndex == (_nPageCount-1)){
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex-1) + "."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+	}
+	else{
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex-1) + "."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	}
+}
+/*细览分页结束*/
+</SCRIPT>
+</head>
+
+<body>
+<div class="topwrap">
+	<div class="banner"></div>
+    <div class="menuwrap">
+<a href="http://www.sklois.cn/" target="_top">首页</a>|
+
+    	<a href="http://www.sklois.cn/jggk/" target="_top">实验室概况</a>|
+
+    	<a href="http://www.sklois.cn/xwzx/" target="_top">新闻中心</a>|
+
+    	<a href="http://www.sklois.cn/kycg1/" target="_top">科研成果</a>|
+
+    	<a href="http://www.sklois.cn/rcdw/" target="_top">人才队伍</a>|
+
+    	<a href="http://www.sklois.cn/kfkt1/" target="_top">开放交流</a>|
+
+    	<a href="http://www.sklois.cn/yjsjy/" target="_top">研究生教育</a>|
+
+    	<a href="http://www.sklois.cn/cxwh/" target="_top">创新文化</a>|
+
+    	<a href="http://www.sklois.cn/lxwm1/" target="_top">联系我们</a>|
+
+    </div>
+</div>
+{if isset($item) AND $item}
+<div class="centerwrap">
+  <div class="center1000">
+ 	    <div class="path">您的当前位置：<a href="../../../" class="CurrChnlCls">首页</a>&gt;&nbsp;<a href="../../" class="CurrChnlCls">新闻中心</a>&gt;&nbsp;<a href="../" class="CurrChnlCls">图片新闻</a></div>
+   	<div class="article_title">{$item->post_title}</div>
+    <table width="100%" border="0" cellspacing="1" cellpadding="1" class="article_ex">
+        <tr>
+          <td align="center" width="33%" id="source">文章来源：</td>
+		  <script type="text/javascript">
+	var source = '';
+	if (source == ''){
+		$("#source").html("");
+	}
+</script>
+          <td align="center" width="34%">发布时间：{$item->create_time}</td>
+          <td align="center" width="33%">【字号： <a href="javascript:void(0)" onclick="doZoom(12)">小</a> <a href="javascript:void(0)" onclick="doZoom(14)">中</a> <a href="javascript:void(0)" onclick="doZoom(16)">大</a> 】</td>
+        </tr>
+      </table>
+     <div class="article_con" id="zoom"><div class=TRS_Editor><style type="text/css">
+
+.TRS_Editor P{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor DIV{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor TD{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor TH{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor SPAN{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor FONT{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor UL{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor LI{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+.TRS_Editor A{margin-top:5px;margin-bottom:5px;line-height:1.5;font-family:宋体;font-size:12pt;}
+</style>
+<div class="TRS_Editor">
+  {$item->post_content}
+</div></div></div>
+	 <table width="100%" border="0" cellspacing="1" cellpadding="1" style="margin-top:10px">
+        <tr>
+          <td align="center"><SCRIPT LANGUAGE="JavaScript">
+createPageHTML(1, 0, "t20161108_353636", "html");
+</SCRIPT></td>
+        </tr>
+      </table>
+	  <table width="100%" border="0" cellspacing="1" cellpadding="1" style="margin:10px auto 20px auto" id="appendix">
+        <tr>
+          <td align="left" style="padding-left:20px; font-weight:bold">附件：</td>
+        </tr>
+		<tr>
+			<td style="padding-left:30px;line-height:22px;height:22px"></td>
+		</tr>
+      </table>
+	  <script type="text/javascript">
+	  	var appendix = '';
+		if(appendix == ''){
+			$("#appendix").hide();
+		}
+	  </script>
+  </div>
+</div>
+{/if}
+<div class="bottomwrap">
+	<table width="1000" border="0" cellspacing="1" cellpadding="1" style="margin:0 auto;">
+      <tr>
+        <td width="300" align="center"><a href="http://www.cas.cn" target="_blank"><img src="http://www.sklois.cn/images/caslogo.jpg" width="243" height="74" /></a></td>
+        <td width="30" align="center"><img src="http://www.sklois.cn/images/bottomline.gif" /></td>
+        <td class="copyright"><span style="font-family:Arial">&copy;</span>中国科学院信息工程研究所信息安全国家重点实验室 备案序号：京ICP备12047326号 <br />
+          电话：010-82546611 传真：010-82546564<br />
+        地址：北京市海淀区闵庄路甲89号 100093 </td>
+      </tr>
+    </table>
+
+</div>
+</body>
+</html>
