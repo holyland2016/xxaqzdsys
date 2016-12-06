@@ -58,8 +58,8 @@
         <div class="topnews">
         	<div class="news_title margin10"><a href='./xwzx/tpxw/'>更多&gt;&gt;</a>焦点新闻 </div>
             <ul class="news_list">
-            {if($list)}
-              {foreach $list as $item)}
+            {if($all)}
+              {foreach $all as $item)}
             	<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
               {/foreach}
             {/if}
@@ -123,90 +123,30 @@
         <div class="cenwrap">
         	<div class="news_title margin10"><a href='./xwzx/zhxw/'>更多&gt;&gt;</a>综合新闻 </div>
           <ul class="news_list margin20">
-
-            	<li><span>[2016-09-18]</span><a href="./xwzx/zhxw/201609/t20160918_348479.html">法国巴黎八大Sihem Mesnager教授访问信息安全国家重点实验室</a></li>
-
-            	<li><span>[2016-09-05]</span><a href="./xwzx/zhxw/201609/t20160905_347181.html">信息安全国家重点实验室李凤华、操晓春研究员“百人计划”终...</a></li>
-
-            	<li><span>[2016-09-01]</span><a href="./xwzx/zhxw/201609/t20160901_346835.html">美国克莱姆森大学大学高绪红教授访问实验室</a></li>
-
-            	<li><span>[2016-08-29]</span><a href="./xwzx/zhxw/201609/t20160909_347687.html">实验室举办2016年网络空间安全论坛</a></li>
-
-            	<li><span>[2016-08-16]</span><a href="./xwzx/zhxw/201608/t20160816_344976.html">上海交通大学熊红凯教授来实验室讲学</a></li>
-
-            	<li><span>[2016-08-16]</span><a href="./xwzx/zhxw/201609/t20160905_347245.html">第一研究室开启京郊“红色之旅”</a></li>
-
-            	<li><span>[2016-07-28]</span><a href="./xwzx/zhxw/201609/t20160906_347306.html">德克萨斯大学圣安东尼奥分校Shouhuai Xu教授访问实验室</a></li>
-
-            	<li><span>[2016-07-26]</span><a href="./xwzx/zhxw/201609/t20160909_347679.html">美国威斯康星大学密尔沃基分校许光午教授访问实验室</a></li>
-
-            	<li><span>[2016-07-11]</span><a href="./xwzx/zhxw/201607/t20160718_343081.html">美国堪萨斯大学罗勃教授访问实验室</a></li>
-
-            	<li><span>[2016-07-06]</span><a href="./xwzx/zhxw/201607/t20160718_343078.html">特拉华大学Qing Xiang教授访问实验室</a></li>
-
+						{if($zhxw)}
+							{foreach $zhxw as $item)}
+							<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
+							{/foreach}
+						{/if}
             </ul>
             <div class="news_title margin10"><a href='./xwzx/kydt/'>更多&gt;&gt;</a>科研动态 </div>
           <ul class="news_list">
-
-            	<li><span>[2016-08-16]</span><a href="./xwzx/kydt/201609/t20160909_347691.html">实验室博士生赵原、刘泽艺参加SAC 2016国际会议</a></li>
-
-            	<li><span>[2016-08-17]</span><a href="./xwzx/kydt/201609/t20160909_347682.html">实验室博士生常冰赴新加坡管理大学交流访问</a></li>
-
-            	<li><span>[2016-06-20]</span><a href="./xwzx/kydt/201609/t20160909_347677.html">实验室博士生完成新加坡南洋理工大学交流项目</a></li>
-
-            	<li><span>[2016-09-12]</span><a href="./xwzx/kydt/201609/t20160912_348016.html">邓燚研究员赴意大利参加SCN 2016国际会议</a></li>
-
-            	<li><span>[2016-07-21]</span><a href="./xwzx/kydt/201607/t20160721_343259.html">信息安全国家重点实验室王安宇助理研究员参加ISIT 2016国际会议</a></li>
-
-            	<li><span>[2016-07-13]</span><a href="./xwzx/kydt/201609/t20160909_347684.html">实验室师生参加ACISP 2016国际会议</a></li>
-
-            	<li><span>[2016-07-19]</span><a href="./xwzx/kydt/201607/t20160719_343134.html">操晓春研究员赴美国参加IEEE(CVPR)2016国际会议</a></li>
-
-            	<li><span>[2016-07-05]</span><a href="./xwzx/kydt/201607/t20160718_343077.html">实验室人员参加2016年全国电子认证技术交流大会</a></li>
-
-            	<li><span>[2016-07-19]</span><a href="./xwzx/kydt/201607/t20160719_343130.html">信息安全国家重点实验室人员参加ACM IH&MMSec 2016国际会议</a></li>
-
-            	<li><span>[2016-06-08]</span><a href="./xwzx/kydt/201609/t20160909_347693.html">实验室博士生赵原赴比利时根特参加IFIP SEC 2016国际会议</a></li>
-
-            </ul>
-			            <div class="news_title margin10"><a href='./xwzx/xshd/'>更多&gt;&gt;</a>学术活动 </div>
-          <ul class="news_list">
-
-            	<li><span>[2016-10-25]</span><a href="./xwzx/xshd/201610/t20161025_352282.html">2016（首届）中国隐私保护学术会议会议通知</a></li>
-
-            	<li><span>[2016-10-24]</span><a href="./xwzx/xshd/201610/t20161024_352132.html">2016（首届）中国隐私保护学术会议特邀报告之一</a></li>
-
-            	<li><span>[2016-10-21]</span><a href="./xwzx/xshd/201610/t20161021_352069.html">2016（首届）中国隐私保护学术会议会议简介</a></li>
-
-            	<li><span>[2016-10-17]</span><a href="./xwzx/xshd/201610/t20161017_351536.html">学术报告：A Discriminative CNN Representation for Untrimm...</a></li>
-
-            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348186.html">学术报告：Codes from bent functions over finite fields</a></li>
-
-            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348144.html">学术报告：Overview of Research in TuSimple</a></li>
-
-            	<li><span>[2016-09-13]</span><a href="./xwzx/xshd/201609/t20160913_348140.html">学术报告：Bent functions: algebraic constructions from th...</a></li>
-
-            	<li><span>[2016-09-05]</span><a href="./xwzx/xshd/201609/t20160905_347260.html">Call for Papers——IWDCF2016</a></li>
-
-            	<li><span>[2016-08-08]</span><a href="./xwzx/xshd/201608/t20160808_344592.html">学术报告：Structured Sparse Learning for SignalProcessing...</a></li>
-
-            	<li><span>[2016-07-21]</span><a href="./xwzx/xshd/201607/t20160721_343258.html">学术报告：New Progress in Cybersecurity Dynamics</a></li>
-
-            </ul>
+						{if($kydt)}
+							{foreach $kydt as $item)}
+							<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
+							{/foreach}
+						{/if}
+          </ul>
       </div>
         <div class="rightwrap">
        	  <div class="lefttitle"><a href='./xwzx/tzgg/'>更多&gt;&gt;</a>通知公告</div>
             <div class="sidewrap margin10">
                 <ul class="sidelist">
-
-                	<li><a href="http://www.sklois.cn/tyfund/">天元基金促进学科交叉融合平台建设项目“编码和信息安全中的数学问题”</a><span>[2016-06-06]</span></li>
-
-                	<li><a href="http://sklois.iie.cas.cn/CryptoMath/">全国高校密码数学挑战赛</a><span>[2016-06-06]</span></li>
-
-                	<li><a href="./xwzx/tzgg/201611/t20161117_354684.html">2016-2017年度信息安全国家重点实验室研究生奖学金公示</a><span>[2016-11-17]</span></li>
-
-                	<li><a href="./xwzx/tzgg/201610/t20161025_352281.html">2016（首届）中国隐私保护学术会议会议通知</a><span>[2016-10-25]</span></li>
-
+									{if($tzgg)}
+										{foreach $tzgg as $item)}
+										<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
+										{/foreach}
+									{/if}
                 </ul>
             </div>
           <div class="lefttitle"><a href='./cxwh/systx/'>更多&gt;&gt;</a>实验室通讯</div>

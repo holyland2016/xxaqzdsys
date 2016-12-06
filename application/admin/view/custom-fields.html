@@ -67,6 +67,21 @@
                 {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
               </div>
     {/case}
+    {case value="taxonomy"}
+
+      <div class="form-group">
+        {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
+        <select  name="{$key}"
+            {if isset($field['id']) AND $field['id']}id="{$field['id']}"{/if}
+            {if isset($field['disabled']) AND $field['disabled']}disabled="disabled"{/if}
+            class="form-control" style="max-width: 300px;">
+            {foreach $field['default'] as $ov => $ol }
+            <option value="{$ov}" {if isset($item[$key]) AND $item[$key] == $ol}selected="selected"{/if}>{$ol}</option>
+            {/foreach}
+        </select>
+        {if isset($field['notes']) AND $field['notes']}<p class="help-block">{$field['notes']}</p>{/if}
+      </div>
+    {/case}
     {case value="radio"}
       <div class="form-group">
         {if isset($field['label']) AND $field['label']}<label>{$field['label']}</label>{/if}
