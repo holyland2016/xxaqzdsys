@@ -8,7 +8,7 @@ use think\Validate;
 /**
  *
  */
-class XwzxController extends controller
+class XwzxController extends AdminAuthController
 {
   //模块基本信息
   private $data = array(

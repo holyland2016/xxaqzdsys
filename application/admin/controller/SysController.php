@@ -9,7 +9,7 @@ use think\Validate;
 /**
  *
  */
-class SysController extends controller
+class SysController extends AdminAuthController
 {
   //模块基本信息
   private $data = array(
