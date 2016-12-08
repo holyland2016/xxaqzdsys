@@ -1,19 +1,20 @@
 <?php
 namespace app\admin\controller;
 use app\admin\model\User;
-use app\admin\model\Xwzx as XwzxModel;
+use app\admin\model\Sys as SysModel;
 use think\Controller;
 use app\admin\controller\AdminAuthController;
 use think\Validate;
+
 /**
  *
  */
-class XwzxController extends controller
+class SysController extends controller
 {
   //模块基本信息
   private $data = array(
     // 'upload_path' => UPLOAD_PATH,
-    'module_url'  => '/admin/xwzx/',
+    'module_url'  => '/admin/sysgk/',
     'upload_url'  => '/public/uploads/',
       'ckeditor'    => array(
             'id'     => 'ckeditor_post_content',
@@ -35,7 +36,7 @@ class XwzxController extends controller
       'post_author'    => array('type' => 'select', 'label' => '作者','default' => $admins, 'extra'=>array('wrapper'=>'col-sm-3')),
       'status'         => array('type' => 'radio', 'label' => '状态','default'=> array(-1 => '删除', 0 => '草稿', 1 => '发布',2 => '待审核')),
       'taxonomy'       => array('type' => 'taxonomy', 'label' => '分类','default'=>
-                          array( 1=>'图片新闻',2=>'综合新闻',3=>'科研动态',4=>'学术活动',5=>'通知公告')),
+                          array( 1=>'实验室概况',2=>'组织架构',3=>'现任领导',4=>'学术委员会',5=>'研究方向',6=>'实验室面貌')),
       'create_time'    => array('type' => 'text1', 'label' => '发布时间','id'=>'datetimepicker1','extra'=>array('format'=>'YYYY-MM-DD hh:mm:ss')),
       'feature_image'  => array('type' => 'file','label'     => '特色图片','exampleInputFile'		=> '点击图片上传'),
         // 'post_excerpt'   => array('type' => 'textarea', 'label' => '摘要'),
@@ -61,13 +62,13 @@ class XwzxController extends controller
 					'post_author'    => array('type' => 'select', 'label' => '作者','default' => $admins, 'extra'=>array('wrapper'=>'col-sm-3')),
 					'status'         => array('type' => 'radio', 'label' => '状态','default'=> array(-1 => '删除', 0 => '草稿', 1 => '发布',2 => '待审核')),
           'taxonomy'       => array('type' => 'taxonomy', 'label' => '分类','default'=>
-                              array( 1=>'图片新闻',2=>'综合新闻',3=>'科研动态',4=>'学术活动',5=>'通知公告')),
+                              array( 1=>'实验室概况',2=>'组织架构',3=>'现任领导',4=>'学术委员会',5=>'研究方向',6=>'实验室面貌')),
           'create_time'    => array('type' => 'text1', 'label' => '发布时间','id'=>'datetimepicker1','extra'=>array('format'=>'YYYY-MM-DD hh:mm:ss')),
 					'feature_image'  => array('type' => 'file','label'     => '特色图片','exampleInputFile'		=> '点击图片上传'),
         );
 
         //默认值设置
-        $item = XwzxModel::get($id);
+        $item = SysModel::get($id);
         $item['post_content'] = str_replace('&', '&amp;', $item['post_content']);
 
         $this->assign('item',$item);
@@ -78,7 +79,7 @@ class XwzxController extends controller
 
   public function add()
   {
-    $posts = new XwzxModel;
+    $posts = new SysModel;
     $data = input('post.');
     $rule = [
     'post_title|文章标题' => 'require',
@@ -91,42 +92,61 @@ class XwzxController extends controller
     $data['create_time'] = $data['create_time'] ? strtotime($data['create_time']) : time();
     $data['update_time'] = time();
     if ($posts->insertGetId($data)) {
-      $this->redirect('admin/xwzx/index');
+      $this->redirect('admin/sys/index');
     } else {
       return $posts->getError();
     }
     // return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
+  public function update($id='')
+  {
+      $posts = new SysModel;
+      $data = input('post.');
+      $data['id'] = $id;
+      if ($posts->update($data)) {
+          return $this->success('信息更新成功','/admin/sys/index');
+      } else {
+          return $posts->getError();
+      }
+  }
+  public function delete($id='')
+  {
+    $result = SysModel::destroy($id);
+    if($result){
+      $this->redirect('admin/sys/index');
+    }else{
+      return $result->getError();
+    }
+  }
 
 
   public function index()
   {
-		$request = request();
-	  $param = $request->param();
+    $request = request();
+    $param = $request->param();
     $map['status'] = ['>=','0'];
 
-		if(!empty($param)){
-			$this->data['search'] = $param;
-			if(isset($param['title'])){
-				$map['post_title'] = ['like','%'.$param['title'].'%'];
-			}
-			if(isset($param['start_time'])){
-						$map['create_time'] = ['>= time',$param['start_time']];
-			}
-			// 结束日期还未书写
-		}
-		// $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-		$list =  XwzxModel::where($map)
-	          ->order('create_time', 'DESC')
-	          ->paginate();
+    if(!empty($param)){
+      $this->data['search'] = $param;
+      if(isset($param['title'])){
+        $map['post_title'] = ['like','%'.$param['title'].'%'];
+      }
+      if(isset($param['start_time'])){
+            $map['create_time'] = ['>= time',$param['start_time']];
+      }
+      // 结束日期还未书写
+    }
+    // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
+    $list =  SysModel::where($map)
+            ->order('create_time', 'DESC')
+            ->paginate();
 
-		$this->assign('data',$this->data);
+    $this->assign('data',$this->data);
     $this->assign('list',$list);
 
 		return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-
-  public function tpxw()
+  public function jianjie()
   {
     $request = request();
     $param = $request->param();
@@ -144,7 +164,7 @@ class XwzxController extends controller
       // 结束日期还未书写
     }
     // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-    $list =  XwzxModel::where($map)
+    $list =  SysModel::where($map)
             ->order('create_time', 'DESC')
             ->paginate();
 
@@ -153,8 +173,7 @@ class XwzxController extends controller
 
     return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-  // comprehensive
-  public function zhxw()
+  public function zhuzhi()
   {
     $request = request();
     $param = $request->param();
@@ -172,7 +191,7 @@ class XwzxController extends controller
       // 结束日期还未书写
     }
     // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-    $list =  XwzxModel::where($map)
+    $list =  SysModel::where($map)
             ->order('create_time', 'DESC')
             ->paginate();
 
@@ -181,8 +200,7 @@ class XwzxController extends controller
 
     return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-
-  public function kytd()
+  public function lingdao()
   {
     $request = request();
     $param = $request->param();
@@ -200,7 +218,7 @@ class XwzxController extends controller
       // 结束日期还未书写
     }
     // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-    $list =  XwzxModel::where($map)
+    $list =  SysModel::where($map)
             ->order('create_time', 'DESC')
             ->paginate();
 
@@ -209,8 +227,7 @@ class XwzxController extends controller
 
     return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-
-  public function xshd()
+  public function xueshu()
   {
     $request = request();
     $param = $request->param();
@@ -228,7 +245,7 @@ class XwzxController extends controller
       // 结束日期还未书写
     }
     // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-    $list =  XwzxModel::where($map)
+    $list =  SysModel::where($map)
             ->order('create_time', 'DESC')
             ->paginate();
 
@@ -237,8 +254,7 @@ class XwzxController extends controller
 
     return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-
-  public function tzgg()
+  public function fangxiang()
   {
     $request = request();
     $param = $request->param();
@@ -256,7 +272,7 @@ class XwzxController extends controller
       // 结束日期还未书写
     }
     // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
-    $list =  XwzxModel::where($map)
+    $list =  SysModel::where($map)
             ->order('create_time', 'DESC')
             ->paginate();
 
@@ -265,26 +281,31 @@ class XwzxController extends controller
 
     return $this->fetch('',[],['__PUBLIC__'=>'/static']);
   }
-
-  public function update($id='')
+  public function mianmao()
   {
-      $posts = new XwzxModel;
-      $data = input('post.');
-      $data['id'] = $id;
-      if ($posts->update($data)) {
-          return $this->success('信息更新成功','/admin/xwzx/index');
-      } else {
-          return $posts->getError();
-      }
-  }
-  public function delete($id='')
-	{
-		$result = XwzxModel::destroy($id);
-    if($result){
-      $this->redirect('admin/xwzx/index');
-    }else{
-      return $result->getError();
-    }
-	}
+    $request = request();
+    $param = $request->param();
+    $map['status'] = ['>=','0'];
+    $map['taxonomy'] = ['=','2'];
 
+    if(!empty($param)){
+      $this->data['search'] = $param;
+      if(isset($param['title'])){
+        $map['post_title'] = ['like','%'.$param['title'].'%'];
+      }
+      if(isset($param['start_time'])){
+            $map['create_time'] = ['>= time',$param['start_time']];
+      }
+      // 结束日期还未书写
+    }
+    // $map['create_time'] = ['between time',['2016-11-18','	2016-11-20']];
+    $list =  SysModel::where($map)
+            ->order('create_time', 'DESC')
+            ->paginate();
+
+    $this->assign('data',$this->data);
+    $this->assign('list',$list);
+
+    return $this->fetch('',[],['__PUBLIC__'=>'/static']);
+  }
 }

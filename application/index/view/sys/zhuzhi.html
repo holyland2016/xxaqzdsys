@@ -62,8 +62,8 @@
       	  <div class="path">您的当前位置:<a href="../../" class="CurrChnlCls">首页</a>&gt;&nbsp;<a href="../" class="CurrChnlCls">新闻中心</a>&gt;&nbsp;<a href="./" class="CurrChnlCls">图片新闻</a></div>
       	  <div class="news_title margin10">图片新闻</div>
           <ul class="news_list margin20">
-            {if($tzgg)}
-              {foreach $tzgg as $item)}
+            {if($zhuzhi)}
+              {foreach $zhuzhi as $item)}
               <li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
               {/foreach}
             {/if}

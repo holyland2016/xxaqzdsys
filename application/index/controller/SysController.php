@@ -4,16 +4,16 @@ namespace app\index\controller;
 use think\Controller;
 use think\Db;
 
-use app\admin\model\Xwzx as XwzxModel;
+use app\admin\model\Sys as SysModel;
 
-class XwzxController extends Controller
+class SysController extends Controller
 {
     public function index()
     {
 
       $map['status'] = ['>=','0'];
               // $map1['taxonomy'] = ['=','1'];
-      $all =  XwzxModel::where($map)
+      $all =  SysModel::where($map)
               ->order('create_time', 'DESC')
               ->paginate();
 
@@ -23,61 +23,72 @@ class XwzxController extends Controller
       // echo $id;
     }
 
-    public function tpxw()
+    public function jianjie()
     {
       $map1['status'] = ['>=','0'];
       $map1['taxonomy'] = ['=','1'];
-      $tpxw =  XwzxModel::where($map1)
+      $jianjie =  SysModel::where($map1)
               ->order('create_time', 'DESC')
               ->paginate();
 
 
       // $this->assign('data',$this->data);
-      $this->assign('tpxw',$tpxw);
+      $this->assign('jianjie',$jianjie);
 
       return $this->fetch();
       // echo $id;
     }
-    public function zhxw()
+    public function zhuzhi()
     {
       $map2['status'] = ['>=','0'];
       $map2['taxonomy'] = ['=','2'];
-      $zhxw =  XwzxModel::where($map2)
+      $zhuzhi =  SysModel::where($map2)
               ->order('create_time', 'DESC')
               ->paginate();
-     $this->assign('zhxw',$zhxw);
+     $this->assign('zhuzhi',$zhuzhi);
      return $this->fetch();
 
     }
-    public function kydt()
+    public function lingdao()
     {
       $map3['status'] = ['>=','0'];
       $map3['taxonomy'] = ['=','3'];
-      $kydt =  XwzxModel::where($map3)
+      $lingdao =  SysModel::where($map3)
               ->order('create_time', 'DESC')
               ->paginate();
-      $this->assign('kydt',$kydt);
+      $this->assign('lingdao',$lingdao);
       return $this->fetch();
     }
-    public function xshd()
+    public function xueshu()
     {
       $map4['status'] = ['>=','0'];
       $map4['taxonomy'] = ['=','4'];
-      $xshd =  XwzxModel::where($map4)
+      $xueshu =  SysModel::where($map4)
               ->order('create_time', 'DESC')
               ->paginate();
-      $this->assign('xshd',$xshd);
+      $this->assign('xueshu',$xueshu);
       return $this->fetch();
     }
-    public function tzgg()
+    public function fangxiang()
     {
 
       $map5['status'] = ['>=','0'];
       $map5['taxonomy'] = ['=','5'];
-      $tzgg =  XwzxModel::where($map5)
+      $fangxiang =  SysModel::where($map5)
             ->order('create_time', 'DESC')
             ->paginate();
-      $this->assign('tzgg',$tzgg);
+      $this->assign('fangxiang',$fangxiang);
+      return $this->fetch();
+    }
+    public function mianmao()
+    {
+
+      $map5['status'] = ['>=','0'];
+      $map5['taxonomy'] = ['=','6'];
+      $mianmao =  SysModel::where($map5)
+            ->order('create_time', 'DESC')
+            ->paginate();
+      $this->assign('mianmao',$mianmao);
       return $this->fetch();
     }
 

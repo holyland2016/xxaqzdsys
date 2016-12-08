@@ -34,6 +34,17 @@ return [
     'admin/posts/update/:id'    => 'admin/posts/update/',
     'admin/posts/delete/:id'    => 'admin/posts/delete',
 
+    'admin/sys/index'           => 'admin/sys/index',
+    'admin/sys/jianjie'           => 'admin/sys/jianjie',
+    'admin/sys/zhuzhi'           => 'admin/sys/zhuzhi',
+    'admin/sys/lingdao'           => 'admin/sys/lingdao',
+    'admin/sys/xueshu'           => 'admin/sys/xueshu',
+    'admin/sys/fangxiang'           => 'admin/sys/fangxiang',
+    'admin/sys/mianmao'           => 'admin/sys/mianmao',
+    'admin/sys/read/:id'        => 'admin/sys/read/',
+    'admin/sys/delete/:id'      => 'admin/sys/delete/',
+    'admin/sys/update/:id'      => 'admin/sys/update/',
+
     'admin/xwzx/create'         => 'admin/xwzx/create',
     'admin/xwzx/read/:id'       => 'admin/xwzx/read/',
     'admin/xwzx/delete/:id'     => 'admin/xwzx/delete/',
@@ -44,6 +55,14 @@ return [
     'admin/xwzx/kytd'           => 'admin/xwzx/kytd',
     'admin/xwzx/xshd'           => 'admin/xwzx/xshd',
     'admin/xwzx/tzgg'           => 'admin/xwzx/tzgg',
+
+    'sys/index'                 =>'sys/index',
+    'sys/jianjie'           => 'sys/jianjie',
+    'sys/zhuzhi'           => 'sys/zhuzhi',
+    'sys/lingdao'           => 'sys/lingdao',
+    'sys/xueshu'           => 'sys/xueshu',
+    'sys/fangxiang'           => 'sys/fangxiang',
+    'sys/mianmao'           => 'sys/mianmao',
 
     'xwzx/index'                =>'xwzx/index',
     'xwzx/tpxw'                 =>'xwzx/tpxw',
