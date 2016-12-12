@@ -1,10 +1,17 @@
+{if isset($item) AND $item}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>第十四届理论密码学会议在京召开----信工所信息安全国家重点实验室</title>
+<title>{$item->post_title}</title>
 <link href="/static/index/style1114.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/static/index/jquery-1.42.min.js"></script>
+<script type="text/javascript" src="/static/index/jquery.KinSlideshow-1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#KinSlideshow").KinSlideshow();
+	});
+</script>
 <SCRIPT LANGUAGE="JavaScript">
 /*大中小代码开始*/
 function dealTag(size,zoomObj,tagName){
@@ -81,34 +88,32 @@ function createPageHTML(_nPageCount, _nCurrIndex, _sPageName, _sPageExt){
 /*细览分页结束*/
 </SCRIPT>
 </head>
-
 <body>
-<div class="topwrap">
-	<div class="banner"></div>
-    <div class="menuwrap">
-			<a href="{:url('/index')}" target="_top">首页</a>|
+  <div class="topwrap">
+  	<div class="banner"></div>
+      <div class="menuwrap">
+  			<a href="{:url('/index')}" target="_top">首页</a>
 
-			<a href="{:url('/sys/index')}" target="_top">实验室概况</a>|
+  			<a href="{:url('/sys/index')}" target="_top">实验室概况</a>
 
-			<a href="{:url('/xwzx/index')}" target="_top">新闻中心</a>|
+  			<a href="{:url('/xwzx/index')}" target="_top">新闻中心</a>
 
-			<a href="" target="_top">科研成果</a>|
+  			<a href="" target="_top">科研成果</a>
 
-			<a href="" target="_top">人才队伍</a>|
+  			<a href="" target="_top">人才队伍</a>
 
-			<a href="" target="_top">开放交流</a>|
+  			<a href="" target="_top">开放交流</a>
 
-			<a href="" target="_top">研究生教育</a>|
+  			<a href="" target="_top">研究生教育</a>
 
-			<a href="" target="_top">创新文化</a>|
+  			<a href="" target="_top">联系我们
+  				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      </div>
+  </div>
 
-			<a href="" target="_top">联系我们</a>|
-    </div>
-</div>
-{if isset($item) AND $item}
 <div class="centerwrap">
   <div class="center1000">
- 	    <div class="path">您的当前位置：<a href="../../../" class="CurrChnlCls">首页</a>&gt;&nbsp;<a href="../../" class="CurrChnlCls">新闻中心</a>&gt;&nbsp;<a href="../" class="CurrChnlCls">图片新闻</a></div>
+ 	    <div class="path">您的当前位置:<a href="" class="CurrChnlCls">首页</a>&gt;&nbsp;<a href="../" class="CurrChnlCls">{$item->taxonomy}</a></div>
    	<div class="article_title">{$item->post_title}</div>
     <table width="100%" border="0" cellspacing="1" cellpadding="1" class="article_ex">
         <tr>
@@ -161,18 +166,19 @@ createPageHTML(1, 0, "t20161108_353636", "html");
 	  </script>
   </div>
 </div>
-{/if}
 <div class="bottomwrap">
 	<table width="1000" border="0" cellspacing="1" cellpadding="1" style="margin:0 auto;">
       <tr>
         <td width="300" align="center"><a href="http://www.cas.cn" target="_blank"><img src="http://www.sklois.cn/images/caslogo.jpg" width="243" height="74" /></a></td>
         <td width="30" align="center"><img src="http://www.sklois.cn/images/bottomline.gif" /></td>
-        <td class="copyright"><span style="font-family:Arial">&copy;</span>中国科学院信息工程研究所信息安全国家重点实验室 备案序号：京ICP备12047326号 <br />
+        <td class="copyright"><span style="font-family:Arial">&copy;</span>广西密码学与信息安全重点实验室<br />
           电话：010-82546611 传真：010-82546564<br />
-        地址：北京市海淀区闵庄路甲89号 100093 </td>
+        地址：广西桂林电子科技大学花江校区 </td>
       </tr>
     </table>
 
 </div>
 </body>
 </html>
+
+{/if}

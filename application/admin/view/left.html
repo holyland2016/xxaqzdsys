@@ -1,7 +1,7 @@
 <div class="col-sm-2 col-md-2 sidebar" id="left">
   <div class="panel-group" id="accordion2">
   <div class="panel-heading">
-    <strong style="font-size: 28px;">信息安全实验室</strong>
+    <strong style="font-size: 28px;">后台管理</strong>
   </div>
     <div class="panel panel-default">
       <div class="panel-heading" data-toggle="collapse"
@@ -53,11 +53,13 @@
         style="height: 0px;">
         <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">科研概况</a></li>
-            <li><a href="#">论文专著</a></li>
-            <li><a href="#">软著专利标准</a></li>
-            <li><a href="#">代表性成果</a></li>
-            <li><a href="#">实验室评优获奖成果</a></li>
+            <li><a href="{:url('/admin/kycg/index')}">科研信息</a></li>
+            <li><a href="{:url('/admin/kycg/create')}">新建</a></li>
+            <li><a href="{:url('/admin/kycg/keyan')}">科研概况</a></li>
+            <li><a href="{:url('/admin/kycg/lunwen')}">论文专著</a></li>
+            <li><a href="{:url('/admin/kycg/zhuanli')}">软著专利标准</a></li>
+            <li><a href="{:url('/admin/kycg/daibiao')}">代表性成果</a></li>
+            <li><a href="{:url('/admin/kycg/pingjiang')}">实验室评优获奖成果</a></li>
           </ul>
         </div>
       </div>
@@ -71,12 +73,10 @@
         style="height: 0px;">
         <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">队伍简介</a></li>
-            <li><a href="#">正高级</a></li>
-            <li><a href="#">副高级</a></li>
-            <li><a href="#">中级</a></li>
-            <li><a href="#">初级</a></li>
-            <li><a href="#">博士后</a></li>
+            <li><a href="{:url('/admin/rcdw/index')}">人才队伍</a></li>
+            <li><a href="{:url('/admin/rcdw/create')}">新建</a></li>
+            <li><a href="{:url('/admin/rcdw/duiwu')}">队伍简介</a></li>
+            <li><a href="{:url('/admin/rcdw/renyuan')}">人员介绍</a></li>
           </ul>
         </div>
       </div>
@@ -90,10 +90,11 @@
         style="height: 0px;">
         <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">课题列表/奖学金</a></li>
-            <li><a href="#">申请指南</a></li>
-            <li><a href="#">副高级</a></li>
-            <li><a href="#">管理制度</a></li>
+            <li><a href="{:url('/admin/kfjl/index')}">开放交流</a></li>
+            <li><a href="{:url('/admin/kfjl/create')}">新建</a></li>
+            <li><a href="{:url('/admin/kfjl/keti')}">课题列表/奖学金</a></li>
+            <li><a href="{:url('/admin/kfjl/shenqing')}">申请指南</a></li>
+            <li><a href="{:url('/admin/kfjl/guanli')}">管理制度</a></li>
           </ul>
         </div>
       </div>
@@ -107,25 +108,12 @@
         style="height: 0px;">
         <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">招生指南</a></li>
-            <li><a href="#">研究生导师</a></li>
-            <li><a href="#">在读研究生</a></li>
-            <li><a href="#">毕业生</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" data-toggle="collapse"
-        data-parent="#accordion2" href="#collapseSeven">
-        <a class="accordion-toggle">创新文化</a>
-      </div>
-      <div id="collapseSeven" class="panel-collapse collapse"
-        style="height: 0px;">
-        <div class="panel-body">
-          <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">实验室通讯</a></li>
-            <li><a href="#">文化生活</a></li>
+            <li><a href="{:url('/admin/yjs/index')}">研究生教育</a></li>
+            <li><a href="{:url('/admin/yjs/create')}">新建</a></li>
+            <li><a href="{:url('/admin/yjs/zhaosheng')}">招生指南</a></li>
+            <li><a href="{:url('/admin/yjs/daoshi')}">研究生导师</a></li>
+            <li><a href="{:url('/admin/yjs/zaidu')}">在读研究生</a></li>
+            <li><a href="{:url('/admin/yjs/biyesheng')}">毕业生</a></li>
           </ul>
         </div>
       </div>
@@ -139,7 +127,8 @@
         style="height: 0px;">
         <div class="panel-body">
           <ul class="nav nav-pills nav-stacked">
-            <li><a href="#">联系我们</a></li>
+            <li><a href="{:url('/admin/lx/index')}">联系我们</a></li>
+            <li><a href="{:url('/admin/lx/create')}">新建</a></li>
           </ul>
         </div>
       </div>

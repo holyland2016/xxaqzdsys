@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>广西密码学与信息安全重点实验室</title>
+<link href="/static/index/style1114.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/static/index/jquery-1.42.min.js"></script>
+<script type="text/javascript" src="/static/index/jquery.KinSlideshow-1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#KinSlideshow").KinSlideshow();
+	});
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+/*大中小代码开始*/
+function dealTag(size,zoomObj,tagName){
+		var tagObj = zoomObj.getElementsByTagName(tagName);
+		if (tagObj.length == 0){
+			zoomObj.style.fontSize = size + 'px';
+		}
+		else{
+		  for( var i=0; i<tagObj.length; i++ ){
+				tagObj[i].style.fontSize = size+'px';
+		  }
+		}
+	}
+function doZoom(size){
+		var zoomObj = document.getElementById('zoom');
+		dealTag(size,zoomObj,"p");
+		dealTag(size,zoomObj,"div");
+		dealTag(size,zoomObj,"font");
+		dealTag(size,zoomObj,"span");
+		dealTag(size,zoomObj,"td");
+		dealTag(size,zoomObj,"strong");
+	}
+/*大中小代码结束*/
+/*细览分页开始*/
+function num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt){
+		var nCurrIndex = _nCurrIndex || 0;
+		if(nCurrIndex == 0)
+			document.write("<span class='yldfy12y'>1</span>&nbsp;");
+		else
+			document.write("<a class='yldfy12y' href=\""+_sPageName+"."+_sPageExt+"\">1</a>&nbsp;");
+
+		for(var i=1; i<_nPageCount; i++){
+		if(nCurrIndex == i)
+			document.write("<span class='yldfy12y'>"+(i+1)+"</span>&nbsp;");
+		else
+			document.write("<a class='yldfy12y' href=\""+_sPageName+"_" + i + "."+_sPageExt+"\">"+(i+1)+"</a>&nbsp;");
+			}
+		return "";
+		}
+function createPageHTML(_nPageCount, _nCurrIndex, _sPageName, _sPageExt){
+	if(_nPageCount == null || _nPageCount<=1){
+		return;
+	}
+	var nCurrIndex = _nCurrIndex || 0;
+	if (_nPageCount==2){
+		if(nCurrIndex == 0){
+		document.write("<span class='yldfy12y'>1</span>&nbsp;<a class='yldfy12y' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">2</a>&nbsp;<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+		}
+		else if (nCurrIndex == 1){
+		document.write("<a class='yldfy12' href=\""+_sPageName+ "."+_sPageExt+"\">【上一页】</a>&nbsp;<a class='yldfy12y' href=\""+_sPageName+ "."+_sPageExt+"\">1</a>&nbsp;<span class='yldfy12y'>2</span>&nbsp;");
+		}
+	}
+	else{
+	if(nCurrIndex == 0){
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	else if (nCurrIndex == 1){
+		document.write("<a class='yldfy12' href=\""+_sPageName+"."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	else if(nCurrIndex == (_nPageCount-1)){
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex-1) + "."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+	}
+	else{
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex-1) + "."+_sPageExt+"\">【上一页】</a>&nbsp;");
+		document.write(num(_nPageCount, _nCurrIndex, _sPageName, _sPageExt));
+		document.write("<a class='yldfy12' href=\""+_sPageName+"_" + (nCurrIndex+1) + "."+_sPageExt+"\">【下一页】</a>&nbsp;");
+	}
+	}
+}
+/*细览分页结束*/
+</SCRIPT>
+</head>
+<body>

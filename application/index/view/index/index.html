@@ -1,41 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>信息安全国家重点实验室</title>
-<link href="/static/index/style1114.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="/static/index/jquery-1.42.min.js"></script>
-<script type="text/javascript" src="/static/index/jquery.KinSlideshow-1.1.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#KinSlideshow").KinSlideshow();
-	});
-</script>
-</head>
+{layout name="layout" /}
 
-<body>
-<div class="topwrap">
-	<div class="banner"></div>
-    <div class="menuwrap">
-			<a href="{:url('/index')}" target="_top">首页</a>|
-
-			<a href="{:url('/sys/index')}" target="_top">实验室概况</a>|
-
-			<a href="{:url('/xwzx/index')}" target="_top">新闻中心</a>|
-
-			<a href="" target="_top">科研成果</a>|
-
-			<a href="" target="_top">人才队伍</a>|
-
-			<a href="" target="_top">开放交流</a>|
-
-			<a href="" target="_top">研究生教育</a>|
-
-			<a href="" target="_top">创新文化</a>|
-
-			<a href="" target="_top">联系我们</a>|
-    </div>
-</div>
 <div class="centerwrap">
 	<div class="topnews_wrap">
     	<div class="topnews_img"><!--幻灯片新闻开始-->
@@ -84,43 +48,10 @@
                 <td><a href="{:url('/sys/mianmao')}">实验室风貌</a></td>
               </tr>
             </table>
-       	  <div class="lefttitle"><a href=''>更多&gt;&gt;</a>代表性成果</div>
-          <div class="sidewrap margin10">
-                <ul class="sidelist">
 
-                	<li><a href="./kycg1/dbcg/201501/t20150107_275266.html">五年成果摘要</a><span></span></li>
-
-                	<li><a href="./kycg1/dbcg/201412/t20141208_271429.html">零知识证明研究和应用</a><span></span></li>
-
-                	<li><a href="./kycg1/dbcg/201412/t20141208_271428.html">密码算法分析方法与检测技术</a><span></span></li>
-
-                	<li><a href="./kycg1/dbcg/201412/t20141208_271427.html">可信计算安全支撑平台关...</a><span></span></li>
-
-                	<li><a href="./kycg1/dbcg/201412/t20141208_271426.html">网络攻击隐蔽特征分析</a><span></span></li>
-
-                	<li><a href="./kycg1/dbcg/201412/t20141208_271419.html">序列密码设计与国际标准化</a><span></span></li>
-
-                </ul>
-            </div>
-          <div class="lefttitle"><a href='./xglj/'>更多&gt;&gt;</a>相关链接</div>
-            <div class="sidewrap margin10">
-                <ul class="sidelist">
-
-                	<li><a href="http://www.cas.cn/">中国科学院</a></li>
-
-                	<li><a href="http://www.gucas.ac.cn/">中国科学院大学</a></li>
-
-                	<li><a href="http://www.iie.ac.cn/">中科院信息工程研究所</a></li>
-
-                	<li><a href="https://mail.cstnet.cn/">信工所邮箱系统</a></li>
-
-                	<li><a href="http://www.las.ac.cn/">中国科学院国家科学图书馆</a></li>
-
-                </ul>
-            </div>
       </div>
         <div class="cenwrap">
-        	<div class="news_title margin10"><a href='./xwzx/zhxw/'>更多&gt;&gt;</a>综合新闻 </div>
+        	<div class="news_title margin10"><a href="{:url('/xwzx/index')}">更多&gt;&gt;</a>综合新闻 </div>
           <ul class="news_list margin20">
 						{if($zhxw)}
 							{foreach $zhxw as $item)}
@@ -128,7 +59,7 @@
 							{/foreach}
 						{/if}
             </ul>
-            <div class="news_title margin10"><a href='./xwzx/kydt/'>更多&gt;&gt;</a>科研动态 </div>
+            <div class="news_title margin10"><a href="{:url('/xwzx/kydt')}">更多&gt;&gt;</a>科研动态 </div>
           <ul class="news_list">
 						{if($kydt)}
 							{foreach $kydt as $item)}
@@ -138,7 +69,7 @@
           </ul>
       </div>
         <div class="rightwrap">
-       	  <div class="lefttitle"><a href='./xwzx/tzgg/'>更多&gt;&gt;</a>通知公告</div>
+       	  <div class="lefttitle"><a href="{:url('/xwzx/tzgg')}">更多&gt;&gt;</a>通知公告</div>
             <div class="sidewrap margin10">
                 <ul class="sidelist">
 									{if($tzgg)}
@@ -148,37 +79,7 @@
 									{/if}
                 </ul>
             </div>
-          <div class="lefttitle"><a href='./cxwh/systx/'>更多&gt;&gt;</a>实验室通讯</div>
-            <div class="sidewrap margin10">
-                <ul class="sidelist">
-
-                	<li><a href="./cxwh/systx/201611/t20161110_354063.html">信息安全国家重点实验室通讯2016年第3期...</a><span>[2016-11-10]</span></li>
-
-                	<li><a href="./cxwh/systx/201608/t20160804_344238.html">信息安全国家重点实验室通讯2016年第2期...</a><span>[2016-08-04]</span></li>
-
-                	<li><a href="./cxwh/systx/201605/t20160516_335285.html">信息安全国家重点实验室通讯2016年第1期...</a><span>[2016-05-16]</span></li>
-
-                	<li><a href="./cxwh/systx/201602/t20160224_326451.html">信息安全国家重点实验室通讯2015年第2期...</a><span>[2016-02-24]</span></li>
-
-                	<li><a href="./cxwh/systx/201602/t20160224_326448.html">信息安全国家重点实验室通讯2015年第1期...</a><span>[2016-02-24]</span></li>
-
-                </ul>
-            </div>
       </div>
         <div class="clear"></div>
     </div>
 </div>
-<div class="bottomwrap">
-	<table width="1000" border="0" cellspacing="1" cellpadding="1" style="margin:0 auto;">
-      <tr>
-        <td width="300" align="center"><a href="http://www.cas.cn" target="_blank"><img src="http://www.sklois.cn/images/caslogo.jpg" width="243" height="74" /></a></td>
-        <td width="30" align="center"><img src="http://www.sklois.cn/images/bottomline.gif" /></td>
-        <td class="copyright"><span style="font-family:Arial">&copy;</span>中国科学院信息工程研究所信息安全国家重点实验室 备案序号：京ICP备12047326号 <br />
-          电话：010-82546611 传真：010-82546564<br />
-        地址：北京市海淀区闵庄路甲89号 100093 </td>
-      </tr>
-    </table>
-
-</div>
-</body>
-</html>

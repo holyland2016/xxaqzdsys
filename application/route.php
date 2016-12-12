@@ -45,6 +45,15 @@ return [
     'admin/sys/delete/:id'      => 'admin/sys/delete/',
     'admin/sys/update/:id'      => 'admin/sys/update/',
 
+    'admin/kycg/index'           => 'admin/kycg/index',
+    'admin/kycg/create'           => 'admin/kycg/create',
+    'admin/kycg/add'           => 'admin/kycg/add',
+    'admin/kycg/keyan'           => 'admin/kycg/keyan',
+    'admin/kycg/lunwen'           => 'admin/kycg/lunwen',
+    'admin/kycg/zhuanli'           => 'admin/kycg/zhuanli',
+    'admin/kycg/daibiao'           => 'admin/kycg/diaobiao',
+    'admin/kycg/pingjiang'           => 'admin/kycg/pingjiang',
+
     'admin/xwzx/create'         => 'admin/xwzx/create',
     'admin/xwzx/read/:id'       => 'admin/xwzx/read/',
     'admin/xwzx/delete/:id'     => 'admin/xwzx/delete/',
@@ -63,6 +72,30 @@ return [
     'sys/xueshu'           => 'sys/xueshu',
     'sys/fangxiang'           => 'sys/fangxiang',
     'sys/mianmao'           => 'sys/mianmao',
+
+    'kycg/index'                =>'kycg/index',
+    'kycg/keyan'                =>'kycg/keyan',
+    'kycg/lunwen'                =>'kycg/lunwen',
+    'kycg/zhuanli'                =>'kycg/zhuanli',
+    'kycg/daibiao'                =>'kycg/daibiao',
+    'kycg/pingjiang'                =>'kycg/pingjiang',
+
+    'rcdw/index'                =>'rcdw/index',
+    'rcdw/duiwu'                =>'rcdw/duiwu',
+    'rcdw/renyuan'                =>'rcdw/renyuan',
+
+    'kfjl/index'                =>'kfjl/index',
+    'kfjl/keti'                =>'kfjl/keti',
+    'kfjl/shengqing'                =>'kfjl/shengqing',
+    'kfjl/guanli'                =>'kfjl/guanli',
+
+    'lx/index'                =>'lx/index',
+
+    'yjs/index'                =>'yjs/index',
+    'yjs/zhaosheng'                =>'yjs/zhaosheng',
+    'yjs/daoshi'                =>'yjs/daoshi',
+    'yjs/zaidu'                =>'yjs/zaidu',
+    'yjs/biyesheng'                =>'yjs/biyesheng',
 
     'xwzx/index'                =>'xwzx/index',
     'xwzx/tpxw'                 =>'xwzx/tpxw',

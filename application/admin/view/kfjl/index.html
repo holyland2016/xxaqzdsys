@@ -1,0 +1,102 @@
+{layout name="layout" /}
+
+<div class="col-sm-10 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">人才队伍列表</h1>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4>搜索</h4>
+    </div>
+    <div class="panel-body">
+      <form class="form-inline" action="{:url('admin/rcdw/list')}" method="GET">
+      <div class="form-group">
+        <input type="text" class="form-control" name="title"
+        value="{if (isset($data['search']) AND isset($data['search']['title']) )}{$data['search']['title']}{/if}" placeholder="输入文章标题">
+      </div>
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker2'>
+          <input type='text' class="form-control" data-format="YYYY-MM-DD" name="start_time"
+          value="{if (isset($data['search']) AND isset($data['search']['start_time']) )}{$data['search']['start_time']}{/if}" placeholder="创建日期起始时间"/>
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker3'>
+          <input type='text' class="form-control" data-format="YYYY-MM-DD" name="end_time"
+          value="{if (isset($data['search']) AND isset($data['search']['end_time']) )}{$data['search']['end_time']}{/if}" placeholder="创建日期结束时间"/>
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">提交</button>
+    </form>
+  </div>
+  </div>
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>文章列表</h4>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>标题</th>
+            <th>作者</th>
+            <th>状态</th>
+            <th>分类</th>
+            <th>创建时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+        {if($list)}
+          {foreach $list as $item)}
+          <tr id="tr_{$item->id}">
+            <td>{$item->post_title}</td>
+            <td>{$item->post_author}</td>
+            <td>{$item->status}</td>
+            <td>{$item->taxonomy}</td>
+            <td>{$item->create_time}</td>
+            <td>
+              <a class="btn btn-info" href="{:url('/admin/rcdw/read/'.$item.id)}">
+                <i class="glyphicon glyphicon-edit icon-white"></i>
+                编辑
+              </a>
+              <a class="btn btn-danger" data-toggle="modal" data-target="#delete-{$item->id}">
+                <i class="glyphicon glyphicon-trash icon-white"></i>
+                删除
+              </a>
+              <!-- Modal -->
+            <div class="modal fade" id="delete-{$item->id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title" id="myModalLabel">操作</h2>
+                  </div>
+                  <div class="modal-body">
+                    <h4>是否删除<strong>{$item->post_title}</strong></h4>
+                  </div>
+                  <div class="modal-footer">
+                    <a type="button" class="btn btn-primary" href="{:url('/admin/rcdw/delete/'.$item->id)}">确定</a>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </td>
+          </tr>
+          {/foreach}
+        {/if}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>

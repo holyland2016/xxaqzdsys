@@ -1,0 +1,48 @@
+{layout name="layout" /}
+	<div class="centerwrap">
+	  <div class="center1000">
+	      <div class="leftwrap">
+	       	  <div class="lefttitle">科研成果</div>
+	          <table width="100%" border="0" cellspacing="1" cellpadding="1" class="outline_leftmenu margin10">
+							<tr>
+								<td><a href="{:url('/kycg/keyan')}">科研概况</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="{:url('/kycg/lunwen')}">论文专著</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="{:url('/kycg/zhuanli')}">软著专利标准</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="{:url('/kycg/daibiao')}">代表性成果</a></td>
+							</tr>
+
+							<tr>
+								<td><a href="{:url('/kycg/pingjiang')}">实验室评优获奖</a></td>
+							</tr>
+
+
+	            </table>
+	      </div>
+
+				<div class="outline_r">
+						<div class="path">您的当前位置:<a href="" class="CurrChnlCls">首页</a>&gt;&nbsp;<a href="../" class="CurrChnlCls">科研成果</a></div>
+						<div class="news_title margin10">科研成果</div>
+						<ul class="news_list margin20">
+							{if($all)}
+								{foreach $all as $item)}
+								<li><span>{$item->create_time}</span><a href="{:url('/read/'.$item->id)}">{$item->post_title}</a></li>
+
+								{/foreach}
+						{/if}
+						</ul>
+						<!-- <div class="page margin10" style="font-size:12px;">共2页&nbsp;&nbsp;<span id='pagenav_0' style="color:#FF0000;padding-left:7px;padding-right:7px; font-size:12px;">1</span><a id='pagenav_1' class="" style="padding-left:7px;padding-right:7px; font-size:12px;"target='_self' href='index_1.html'>2</a><a id='pagenav_1' class="" style="padding-left:7px;padding-right:7px; font-size:12px;"target='_self' href='index_1.html'>下一页</a><a id='pagenav_tail' class="" style="padding-left:7px;padding-right:7px; font-size:12px;"target='_self' href='index_1.html'>尾页</a> </div> -->
+				</div>
+
+
+					<div class="clear"></div>
+			</div>
+	</div>
